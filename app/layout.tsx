@@ -28,6 +28,7 @@ export default function RootLayout({
         <QueryWrapper>
           {/* @ts-expect-error Server Component */}
           <Nav />
+          
           {children}
         </QueryWrapper>
       </body>
