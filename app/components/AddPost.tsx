@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 const AddPost = () => {
   const [title, setTitle] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
+  const queryClient = useQueryClient()
   let toastPostId: string
 
   //Create a post
@@ -23,6 +24,8 @@ const AddPost = () => {
       },
       onSuccess: (data) => {
         toast.success('Post had been made successfully', {id: toastPostId})
+        queryClient.invalidateQueries(["posts"]) // invalidate cach to refresh data and display new post.
+
         setTitle("")
         setIsDisabled(false)
       },
