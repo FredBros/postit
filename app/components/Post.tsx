@@ -4,15 +4,15 @@ import Link from "next/link"
 
 
 type Props = {
-  avatar: string;
-  name: string;
-  postTitle: string;
-  id: string;
+  avatar: string | undefined ;
+  name: string | undefined ;
+  postTitle: string | undefined ;
+  id: string | undefined;
   comments?: {
-    createdAt: string;
-    id: string;
-    postId: string;
-    userId: string;
+    createdAt: string | undefined;
+    id: string | undefined;
+    postId: string | undefined ;
+    userId: string | undefined ;
   }[];
 };
 
@@ -20,7 +20,7 @@ const Post = ({avatar, name, postTitle, id, comments}:Props) => {
   return (
     <div className="bg-white my-8 p-8 rounded-lg">
 <div className="flex items-center gap-2">
-    <Image className="rounded-full" width={32} height={32} src= {avatar} alt="avatar"/>
+    <Image className="rounded-full" width={32} height={32} src= {avatar!} alt="avatar"/>
     <h3 className="font-bold text-gray-700">{name}</h3>
 </div>
 <div className="my-8">
