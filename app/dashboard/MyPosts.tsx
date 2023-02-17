@@ -15,7 +15,6 @@ const MyPosts = () => {
     queryKey: ["auth-posts"],
   });
   if (isLoading) return <h1>Post are loading ...</h1>;
-  console.log(data);
   return (
     <div>
       {data?.posts?.map((post) => (

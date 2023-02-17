@@ -35,7 +35,6 @@ const EditPost = ({ avatar, name, title, comments, id }: EditProps) => {
         toast.error("Error deleting that post", { id: deleteToastID });
       },
       onSuccess: (data) => {
-        console.log(data);
         toast.success("Post has been deleted successfully", {
           id: deleteToastID,
         });

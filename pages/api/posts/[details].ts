@@ -8,7 +8,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-           console.log(req.query);
 
     try {
      const data= await prisma.post.findUnique({
